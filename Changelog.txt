@@ -1,0 +1,4 @@
+
+1.0.1 - 2017-09-20
+  - cloned from : https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/
+  - add support for least-conn load-balancing

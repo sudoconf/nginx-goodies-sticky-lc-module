@@ -90,8 +90,8 @@ Modify your compile of Nginx by adding the following directive
 - secure    enable secure cookies; transferred only via https
 - httponly  enable cookies not to be leaked via js
 
-- lb_alg: the strategy to apply when no peer was selected or selected peer is invalid
-   -  rr | lc classic load-balancing algorighms well known as the round_robin and the least-connection
+- **lb_alg: the strategy to apply when no peer was selected or selected peer is invalid**
+   -  **rr | lc classic load-balancing algorighms well known as the round_robin and the least-connection**
 
 # Issues and Warnings:
 

@@ -124,7 +124,7 @@ see Todo.md
 - Peter Bowey, Nginx 1.5.8 API-Change
 - Michael Chernyak for Max-Age-Patch
 - anybody who suggested a patch, created an issue on bitbucket or helped improving this module
-- Leonardo Liu (hao.liu@corp.elong.com), add support for least-conns
+- Leonardo Liu (liuhao.x64@gmail.com), add support for least-conns
 
 
 

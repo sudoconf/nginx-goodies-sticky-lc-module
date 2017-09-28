@@ -509,9 +509,11 @@ ngx_http_upstream_get_least_conn_peer( ngx_peer_connection_t *pc, void *data )
             continue;
         }
 
+#if defined(nginx_version) && nginx_version >= 1011005
         if( peer->max_conns && peer->conns >= peer->max_conns ) {
             continue;
         }
+#endif
 
         /*
          * select peer with least number of connections; if there are

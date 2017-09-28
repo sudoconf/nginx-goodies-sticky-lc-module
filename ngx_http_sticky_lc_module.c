@@ -593,9 +593,11 @@ ngx_http_upstream_get_least_conn_peer( ngx_peer_connection_t *pc, void *data )
                 continue;
             }
 
+#if defined(nginx_version) && nginx_version >= 1011005
             if( peer->max_conns && peer->conns >= peer->max_conns ) {
                 continue;
             }
+#endif
 
             peer->current_weight += peer->effective_weight;
             total += peer->effective_weight;
@@ -980,8 +982,10 @@ ngx_http_sticky_set(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     upstream_conf->peer.init_upstream = ngx_http_init_upstream_sticky;
 
     upstream_conf->flags = NGX_HTTP_UPSTREAM_CREATE
-                           | NGX_HTTP_UPSTREAM_WEIGHT
+#if defined(nginx_version) && nginx_version >= 1011005
                            | NGX_HTTP_UPSTREAM_MAX_CONNS
+#endif
+                           | NGX_HTTP_UPSTREAM_WEIGHT
                            | NGX_HTTP_UPSTREAM_MAX_FAILS
                            | NGX_HTTP_UPSTREAM_FAIL_TIMEOUT
                            | NGX_HTTP_UPSTREAM_DOWN
